@@ -1,0 +1,242 @@
+% Created 2021-03-10 mer 01:59
+% Intended LaTeX compiler: pdflatex
+\documentclass[french]{article}
+\usepackage{minted}
+\usepackage[round]{natbib}
+\usepackage{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx}
+\usepackage{xfrac}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage[skip=1.\baselineskip]{caption}
+\usepackage{soul}
+\usepackage[usenames,dvipsnames,svgnames]{xcolor}
+\usepackage{parskip}
+\usepackage[many]{tcolorbox}
+\usepackage{hyperref}
+\usepackage[export]{adjustbox}
+\usepackage{subcaption}
+\definecolor{luckydarkpurple}{RGB}{142,0,142}
+\definecolor{luckydarkgreen}{RGB}{0,142,0}
+\definecolor{luckydarkblue}{RGB}{0,0,142}
+\hypersetup{
+    colorlinks=true,
+    linkcolor={luckydarkpurple},
+    citecolor={luckydarkgreen},
+    urlcolor={luckydarkblue}}
+\usepackage{geometry}
+\geometry{a4paper,left=2.5cm,top=1.2cm,right=2.5cm,bottom=1.5cm,marginparsep=7pt, marginparwidth=.6in}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{Sm!le42}
+\date{\today}
+\title{STA2 - Lucky Solutions}
+\hypersetup{
+ pdfauthor={Sm!le42},
+ pdftitle={STA2 - Lucky Solutions},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 26.3 (Org mode 9.1.9)}, 
+ pdflang={Frenchb}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+
+\section{Chapitre 1 -- Introduction au calcul des probabilités}
+\label{sec:orgc77019c}
+
+\subsection{Exercice 3}
+\label{sec:orgce2b2e1}
+
+Un dé est truqué de sorte qu’en le lançant, la probabilité d’obtenir 6 vaut le triple de celle d’obtenir toute autre valeur. Avec ce dé, quelle est la probabilité d’obtenir un point pair ?
+
+\subsubsection{Solution \emph{(\(\sfrac{5}{8}\))}}
+\label{sec:orgc760d17}
+
+\begin{center}
+\begin{tabular}{llllll}
+P(1) = \(\sfrac{1}{8}\) & P(2) = \(\sfrac{1}{8}\) & P(3) = \(\sfrac{1}{8}\) & P(4) = \(\sfrac{1}{8}\) & P(5) = \(\sfrac{1}{8}\) & \textbf{P(6) =} \(\mathbf{\sfrac{3}{8}}\)\\
+\end{tabular}
+\end{center}
+
+\begin{center}
+\textbf{P(Pair)} = P(2)+P(4)+P(6)
+
+= \(\sfrac{1}{8}\) + \(\sfrac{1}{8}\) + \(\sfrac{3}{8}\)
+
+\(\textcolor{luckydarkgreen}{=\mathbf{\sfrac{5}{8}}}\)
+\end{center}
+
+\subsection{Exercice 4}
+\label{sec:org27c804a}
+Trois chevaux sont en course. Le premier à 2 fois plus de chances de gagner que le deuxième, celui-ci a aussi 2 fois plus de chances de gagner que le troisième. Quelles sont les probabilités de gagner de chacun des trois chevaux ?
+
+\subsubsection{Solution \emph{(\(\sfrac{4}{7}\);\(\sfrac{2}{7}\);\(\sfrac{1}{7}\))}}
+\label{sec:org5bcfe7a}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+Cheval & 1 & 2 & 3\\
+\hline
+Proba & 4*x & 2*x & x\\
+\hline
+\end{tabular}
+\end{center}
+\begin{center}
+\emph{x} = \(\frac{1}{4+2+1}\) = \(\sfrac{1}{7}\)
+\end{center}
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+Cheval & 1 & 2 & 3\\
+\hline
+Proba & \(\textcolor{luckydarkgreen}{\bold{4/7}}\) & \(\textcolor{luckydarkgreen}{\bold{2/7}}\) & \(\textcolor{luckydarkgreen}{\bold{1/7}}\)\\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Exercice 5}
+\label{sec:org0d3aeeb}
+
+Soit un jeu de 52 cartes dont on tire une carte au hasard. On définit les évènements aléatoires suivants:
+\begin{itemize}
+\item A : obtenir un as
+\item B : obtenir une carte rouge
+\item C : obtenir un cœur.
+\end{itemize}
+
+Définissez les évènements suivants et calculez-en la probabilité :
+\begin{enumerate}
+\item A \(\cap\) B
+\item B \(\cap\) C
+\item A \(\cup\) C
+\item B \(\cup\) C
+\end{enumerate}
+
+\subsubsection{Solution \emph{(\(\sfrac{1}{26}\);\(\sfrac{1}{4}\);\(\sfrac{4}{13}\);\(\sfrac{1}{2}\))}}
+\label{sec:orgc34b655}
+
+\begin{itemize}
+\item P(A) = \(\sfrac{4}{52}\) = \(\sfrac{1}{13}\)
+\item P(B) = \(\sfrac{26}{52}\) = \(\sfrac{1}{2}\)
+\item P(C) = \(\sfrac{13}{52}\) = \(\sfrac{1}{4}\)
+\end{itemize}
+
+\begin{enumerate}
+\item \textbf{A \(\cap\) B} \emph{\(\textcolor{gray}{\text{--> As et Rouge}}\)}
+\label{sec:orga84da8f}
+
+= P(A \textbf{et} B) = \(\sfrac{1}{13}\)*\(\sfrac{1}{2}\)
+\(\textcolor{luckydarkgreen}{\mathbf{= \sfrac{1}{26}}}\)
+
+\item \textbf{B \(\cap\) C} \emph{\(\textcolor{gray}{\text{--> Rouge et Coeur}}\)}
+\label{sec:org054730d}
+
+= P(B \textbf{et} C) = P(C) \(\textcolor{luckydarkgreen}{\mathbf{= \sfrac{1}{4}}}\) \emph{\(\textcolor{gray}{\text{--> Car un coeur est toujours rouge}}\)}
+
+\item \textbf{A \(\cup\) C} \emph{\(\textcolor{gray}{\text{--> As ou Coeur}}\)}
+\label{sec:org4113b04}
+
+= P(A \textbf{ou} C) = P(A)+P(C)--P(A \textbf{et} C) \emph{\(\textcolor{gray}{\text{--> On retire les As Rouges comptés en double}}\)}
+
+= \(\sfrac{4}{52}\) + \(\sfrac{13}{52}\) -- \(\sfrac{4}{52}\)*\(\sfrac{1}{4}\)
+
+\(\textcolor{luckydarkgreen}{\mathbf{= \sfrac{4}{13}}}\)
+
+\item \textbf{B \(\cup\) C} \(\textcolor{gray}{\text{--> Rouge ou Coeur}}\)
+\label{sec:org763e717}
+
+= P(B \textbf{ou} C) = P(B) \emph{\(\textcolor{gray}{\text{--> Car un coeur est toujours rouge}}\)}
+
+\(\textcolor{luckydarkgreen}{\mathbf{= \sfrac{1}{2}}}\)
+\end{enumerate}
+
+\subsection{Exercice 9}
+\label{sec:org8efd4f7}
+
+Soit un groupe composé de 12 hommes dont la moitié a des lunettes et de 15 femmes dont le tiers a des lunettes. Si on choisit une personne au hasard dans ce groupe, quelle est la probabilité que cette personne soit un homme ou porte des lunettes ?
+
+\subsubsection{Solution \emph{(\(\sfrac{17}{27}\))}}
+\label{sec:org07f250d}
+
+\begin{center}
+\begin{tabular}{c|c|c|c|}
+ & Lunettes & !Lunettes & Total\\
+\hline
+Hommes & \(\textcolor{teal}{\bold{6}}\) & 6 & \(\textcolor{teal}{\bold{12}}\)\\
+\hline
+Femmes & 5 & 10 & 15\\
+\hline
+Total & \(\textcolor{teal}{\bold{11}}\) & 16 & \(\textcolor{teal}{\bold{27}}\)\\
+\end{tabular}
+\end{center}
+
+--> P(Hommes \textbf{ou} Lunettes)
+
+= P(Homme) + P(Lunettes) -- P(Homme \textbf{et} Lunettes)
+
+= \(\sfrac{12}{27}\) + \(\sfrac{11}{27}\) -- \(\sfrac{6}{27}\)
+
+\(\textcolor{luckydarkgreen}{\mathbf{= \sfrac{17}{27}}}\)
+
+\begin{quote}
+\textbf{Même résultat avec la Loi \emph{complémentaire} de Morgan:}
+
+P(Homme ou Lunettes) = 1 -- P(Femmes et !Lunettes)
+
+= 1 -- \(\sfrac{10}{27}\) \(\textcolor{luckydarkgreen}{\mathbf{= \sfrac{17}{27}}}\)
+\end{quote}
+
+\subsection{Exercice 10}
+\label{sec:org2853394}
+
+Lors de vacances scolaires, deux activités sportives sont proposées : natation et vélo. On sait que 40\% des participants se sont inscrits à la natation, 50\% aux randonnées vélo et 25\% se sont inscrits au deux. Quelle est la probabilité qu’un participant choisi au hasard ne fasse pas de sport ?
+
+\subsubsection{Solution \emph{(35\%)}}
+\label{sec:orgb97e475}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+ & Vélo & !Vélo & Total\\
+\hline
+Natation & 25\% & 15\% & 40\%\\
+\hline
+!Natation & 25\% & 35\% & 60\%\\
+\hline
+Total & 50\% & 50\% & 100\%\\
+\hline
+\end{tabular}
+\end{center}
+
+P(!Sport) = P(!Vélo \textbf{et} !Natation) \(\textcolor{luckydarkgreen}{\mathbf{= \sfrac{35}{100}}}\)
+
+\begin{quote}
+\textbf{Alternative:}
+
+P(!Sport) = 1 -- P(Natation \textbf{ou} Vélo)
+
+= 1 -- P(Natation) + P(Vélo) -- P(Natation \textbf{et} Vélo)
+
+= 100\%--40\%+50\%--25\% \(\textcolor{luckydarkgreen}{\mathbf{= \sfrac{35}{100}}}\)
+\end{quote}
+
+\subsection{À VENIR \ldots{}}
+\label{sec:org466b8e9}
+\end{document}

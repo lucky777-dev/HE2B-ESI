@@ -1,0 +1,30 @@
+<Qucs Schematic 0.0.20>
+<Properties>
+  <View=0,0,963,800,1,0,0>
+  <Grid=10,10,0>
+  <DataSet=labo2R2.dat>
+  <DataDisplay=labo2R2.sch>
+  <OpenDisplay=1>
+  <Script=labo2R2.m>
+  <RunScript=0>
+  <showFrame=0>
+  <FrameText0=Titre>
+  <FrameText1=Auteur :>
+  <FrameText2=Date :>
+  <FrameText3=Version :>
+</Properties>
+<Symbol>
+</Symbol>
+<Components>
+</Components>
+<Wires>
+</Wires>
+<Diagrams>
+  <Tab 110 550 310 450 3 #c0c0c0 1 00 1 0 1 1 1 0 1 1 1 0 1 21 315 0 225 "" "" "" "">
+	<"AmpereMetre.I" #0000ff 0 3 1 0 0>
+	<"VoltMetreR2.V" #0000ff 0 3 1 0 0>
+  </Tab>
+</Diagrams>
+<Paintings>
+  <Text 440 270 12 #000000 0 "R1 =    1 kOhm\nR2 = 2.2 kOhm\n(En serie)\n\nVoltMetreR2 aux bornes de R2\n\nV1 = Generateur de courant continu (-10 V a 10 V en 21 etapes)">
+</Paintings>

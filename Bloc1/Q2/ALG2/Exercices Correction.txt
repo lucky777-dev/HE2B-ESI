@@ -1,0 +1,385 @@
+#1-1. Écrire un algorithme qui reçoit un tableau d’entiers (à n lignes et m colonnes) ainsi que les coordonnées d’une case (ligne, colonne) et qui retourne un booléen indiquant si la case désignée contient ou pas la valeur nulle.
+
+S : algorithm isNul(array: array of n x m integers, ln, col: integers) -> boolean
+        return array[ln, col] == 0
+    end
+
+#1-2. Écrire un algorithme qui reçoit un tableau d’entiers (à n lignes et m colonnes) ainsi que des coordonnées et qui retourne un booléen indiquant si ces coordonnées désignent bien une case du tableau, c’est-à-dire qu’elles sont dans le bon intervalle (0 à n − 1 et 0 à m − 1).
+
+S : algorithm exist(array: array of n x m integers, ln, col: integers) -> boolean
+        return ln>=0 && ln<n && col>=0 && col<m
+    end
+    
+#1-3. Écrire un algorithme qui reçoit un tableau d’entiers (à n lignes et m colonnes) ainsi que les coordonnées d’une case (ligne, colonne) et une valeur entière. L’algorithme met la valeur donnée dans la case indiquée pour autant que la case contienne actuellement la valeur nulle. Dans le cas contraire, l’algorithme ne fait rien.
+
+S : algorithm assign(array: array of n × m integers, ln, col, val: integers)
+        if array[ln, col] == 0
+            array[ln, col] = val
+        end if
+    end
+    
+#1-4. Écrire un algorithme qui reçoit un tableau d’entiers (à n lignes et m colonnes) ainsi que les coordonnées d’une case (ligne, colonne). L’algorithme doit indiquer si la case donnée est ou non sur un bord du tableau.
+
+S : algorithm isEdge(array: array of n x m integers, ln, col: integers) -> boolean
+        return (ln == n-1 || ln == 0 || col == m-1 || col == 0)
+    end
+    
+#1-5. Écrire un algorithme qui reçoit un tableau d’entiers (à n lignes et m colonnes) ainsi que les coordonnées d’une case (ligne, colonne). L’algorithme doit indiquer si la case donnée est ou non sur un des 4 coins du tableau.
+
+S : algorithm isCorner(array: array of n x m integers, ln, col: integers) -> boolean
+        return ((ln == 0 && col == 0) || (ln == 0 && col == m-1) || (ln == n-1 && col == 0) || (ln == n-1 && col == m-1))
+    end
+    
+#1-6. Écrire un algorithme qui affiche tous les éléments d’un tableau (à n lignes et m colonnes) ligne par ligne. Écrivez un autre algorithme qui affiche cette fois les éléments colonne par colonne
+
+S : algorithm showLnByLn(array: array of n x m integers) -> void
+        for ln from 0 to n-1
+            for col from 0 to m-1
+                print array[ln, col]
+            end for
+        end for
+    end
+            
+    algorithm showColByCol(array: array of n x m integers) -> void
+        for col from 0 to m-1
+            for ln from 0 to n-1
+                print array[ln, col]
+            end for
+        end for
+    end
+            
+#1-7. Écrire un algorithme qui reçoit un tableau d’entiers (à n lignes et m colonnes) ainsi que les coordonnées d’une case (ligne, colonne) et affiche les coordonnées des cases adjacentes.
+
+S : algorithm indexAdjBox(array: array of n x m integers, ln, col: integers) -> void
+        if col > 0
+            print "line : "+ln+" and column : "+(col-1)
+        end if
+        if ln > 0
+            print "line : "+(ln-1)+" and column : "+col
+        end if
+        if col < (array[0].length-1)
+            print "line : "+ln+" and column : "+(col+1)
+        end if
+        if ln < (array.length-1)
+            print "line : "+(ln+1)+" and column : "+col
+        end if
+    end
+    
+#1-8. Écrire un algorithme qui reçoit un tableau (n x m) d’entiers et qui retourne la proportion d’éléments nuls dans ce tableau.
+
+S : algorithm nbNuls(array: array of n x m integers) -> double
+        int cpt = 0
+            for i from 0 to array[0].length-1
+                for j from 0 to array.length-1
+                    if array[i, j] == 0
+                        cpt++
+                    end if
+                end for
+            end for
+        return cpt/(array.length*array[0].length)
+    end
+    
+#1-9. Soit un tableau à n lignes et m colonnes d’entiers où une ligne représente les notes sur 20 d’un étudiant et les colonnes toutes les notes d’un cours. Écrire un algorithme recevant ce tableau en paramètre et retournant le pourcentage d’étudiants ayant obtenu une moyenne supérieure à 50%.
+
+S : algorithm ratioMoreThanHalf(array: array of n x m integers) -> double
+        int cpt = 0
+        for i from 0 to array[0].length-1
+            int tot = 0
+            for j from 0 to array.length-1
+                tot += array[i][j]
+            end for
+            if tot/array.length > 10
+                cpt++
+            end if
+        end for
+        return cpt/array[0].length
+    end
+    
+#1-10. Le triangle de Pascal est construit de la façon suivante :
+. la ligne initiale contient un seul élément de valeur 1 ;
+. chaque ligne possède un élément de plus que la précédente ;
+. chaque ligne commence et se termine par 1 ;
+. pour calculer un nombre d’une autre case du tableau, on additionne le nombre situé dans la case située juste au-dessus avec celui dans la case à la gauche de la précédente.
+Écrire un algorithme qui reçoit en paramètre un entier n, et qui renvoie un tableau contenant les n + 1 premières lignes du triangle de Pascal (indicées de 0 à n).
+N.B. : le « triangle » sera bien entendu renvoyé dans un tableau carré (ce qui ne sera forcément le cas en Java). Quid des cases non occupées ?
+Par exemple, pour n qui vaut 5, on aura le tableau ci-contre.
+
+1
+1  1
+1  2  1
+1  3  3  1
+1  4  6  4  1
+1  5 10 10  5  1
+etc...
+
+S : algorithm pascalTriangle(n: integer) -> array of n+1 x n+1 integers
+        int[][] array = new int[n+1][n+1]
+        for i from 0 to n
+            for j from 0 to i
+                if j == 0 || j == i
+                    array[i][j] == 1
+                else
+                    array[i][j] == array[i-1][j] + array[i-1][j-1]
+                end if
+            end for
+        end for
+    end
+    
+#1-11. Écrire un algorithme qui reçoit un tableau (n x m) d’entiers et qui vérifie si tous les nombres qu’il contient sont strictement positifs. Bien sûr, on veillera à éviter tout travail inutile ; la rencontre d’un nombre négatif ou nul doit arrêter l’algorithme.
+
+S : algorithm onlyPositives(array: array of n x m integers) -> boolean
+        for i from 0 to array.length[0]-1
+            for j from 0 to array.length-1
+                if array[i][j] < 0
+                    return false
+                end if
+            end for
+        end for
+        return true
+    end
+    
+#1-12. Écrire un algorithme qui reçoit un tableau d’entiers (à n lignes et m colonnes) ainsi qu’un numéro de ligne et qui retourne un booléen indiquant si la ligne donnée du tableau ne contient que des valeurs non nulles.
+algorithm lignePleine(tab: array of n × m integers, lg: integer) → boolean
+Faites de même pour une colonne.
+
+S : algorithm fullLine(array: array of n x m integers, ln: integer) -> boolean
+        for i from 0 to array.length-1
+            if array[ln][i] == 0
+                return false
+            end if
+        end for
+        return true
+    end
+    
+#1-13. Un carré magique est un tableau d’entiers carré (c’est-à-dire possédant autant de lignes que de colonnes) ayant la propriété suivante : si on additionne les éléments d’une quelconque de ses lignes, de ses colonnes ou de ses deux diagonales, on obtient à chaque fois le même résultat. Écrire un algorithme recevant en paramètres le tableau (n x n) d’entiers représentant le carré et renvoyant une valeur booléenne indiquant si c’est un carré magique ou pas.
+
+S : algorithm isMagicSquare(array: array of n x n integers) -> boolean
+        int testLn = 0
+        int testCol = 0
+        for i from 0 to n-1
+            testLn += array[0][i]
+        end for
+        final sum = testLn
+        for i from 0 to n-1
+            testLn = 0
+            testCol = 0
+            for j from 0 to n-1
+                testLn += array[i][j]
+                testCol += array[j][i]
+            end for
+            if testLn != sum || testCol != sum
+                return false
+            end if
+        end for
+        return true
+    end
+    
+#1-14. On donne un tableau d’entiers tabEnt à n lignes et m colonnes. Écrire un algorithme retournant la somme de tous les éléments impairs situés sur le bord du tableau.
+Exemple : pour le tableau suivant, l’algorithme doit renvoyer 32
+
+3   4   6  11
+2  21   7   9
+1   5  12   3
+
+Et pour le suivant, l'algorithme doit renvoyer 6
+
+4   1   2   8   5
+
+S : algorithm sumOddsEdges(array: array of n x m integers) -> integer
+        int sum = 0
+        for i from 0 to array[0].length-1
+            if i > 0 && i < array[0].length-1
+                if array[i][0] % 2 != 0
+                    sum += array[i][0]
+                end if
+                if array[i][array.length-1] % 2 != 0
+                    sum += array[i][array.length-1]
+                end if
+            else
+                for j from 0 to array.length-1
+                    if array[i][j] % 2 != 0
+                        sum += array[i][j]
+                    end if
+                end for
+        end for
+        return sum
+    end
+    
+#1-15. On possède un tableau à n lignes et n colonnes dont les éléments de type Couleur valent NOIR ou BLANC. On suppose que le tableau est initialisé à BLANC au départ. Écrire un algorithme qui noircit les cases de ce tableau comme le suggèrent les dessins suivants (les exemples sont donnés pour un tableau 10 x 10 mais les algorithmes doivent fonctionner quelle que soit la taille du tableau).
+
+a) Le contour       b) Le X             c) Le Z de Zorro    d) Le zèbre         e) Le tunnel        f) La spirale
+###############     #             #     ###############     #   #   #   #       ###############     ###############
+#             #       #         #                   #         #   #   #   #     #             #                   #
+#             #         #     #                   #         #   #   #   #       #   #######   #     ############  #
+#             #           # #                   #             #   #   #   #     #   #     #   #     #          #  #
+#             #           # #                 #             #   #   #   #       #   #     #   #     #    ##    #  #
+#             #         #     #             #                 #   #   #   #     #   #######   #     #    #######  #
+#             #       #         #         #                 #   #   #   #       #             #     #             #
+###############     #             #     ###############       #   #   #   #     ###############     ###############
+
+(Voir 1-15.png)
+
+Notes :
+- Le zèbre doit toujours présenter des lignes obliques et parallèles, quelle que soit la taille.
+- La spirale est un véritable défi et vous est donné comme exercice facultatif. Ne le faites pas si vous êtes en retard.
+
+S : a) Le contour
+    algorithm edges(array: array of n x n booleans)
+        for i from 0 to n-2
+            array[i][0] = true
+            array[n-1][i] = true
+            array[n-1-i][n-1] = true
+            array[0][n-1-i] = true
+        end for
+    end
+    
+    b) Le X
+    algorithm x(array: array of n x n booleans)
+        for i from 0 to n-1
+            array[i][i] = true
+            array[n-1-i][i] = true
+        end for
+    end
+    
+    c) Le Z de Zorro
+    algorithm zorro(array: array of n x n booleans)
+        for i from 0 to n-1
+            array[0][i] = true
+            array[n-1][i] = true
+            array[n-1-i][i] = true
+        end for
+    end
+    
+    d) Le zèbre
+    algorithm zebra(array: array of n x n booleans)
+        for i from 0 to 2*(n-1) with i += 3
+            if i < array[0].length
+                for j from 0 to i
+                    array[i-j][j] = true
+                end for
+            else
+                for j from 0 to 2*(array.length-1)-i
+                    array[array[0].length-1-j][i-(array.length-1)+j] = true
+                end for
+            end if
+        end for
+    end
+    
+    e) Le tunnel
+    algorithm tunnel(array: array of n x n booleans)
+        for i from 0 to (n-1)/2 with i += 2
+            for j from 0 to n-2-2*i
+                array[i+j][i] = true
+                array[n-1-i][i+j] = true
+                array[n-1-i-j][n-1-i] = true
+                array[i][n-1-i-j] = true
+            end for
+        end for
+    end
+    
+    f) La spirale
+    algorithm spiral(array: array of n x n booleans)
+        int ln = 0
+        int col = 0
+        int moveLn = 0
+        int moveCol = 1 /* First we want to move to the right */
+        array[ln][col] = true
+        boolean stop = array.length <= 1 /* Skip if only one cell */
+        while (!stop)
+            ln += moveLn
+            col += moveCol
+            array[ln][col] = true
+            if moveCol == 1
+                if col < n-2
+                    if array[ln][col+2]
+                        moveCol = 0
+                        moveLn = 1
+                        if array[ln+1][col-1] || array[ln+2*moveLn][col+2*moveCol]
+                            stop = true
+                        end if
+                    end if
+                else if col == n-1
+                    moveCol = 0
+                    moveLn = 1
+                    if array[ln+1][col-1] || (array.length >2 && array[ln+2*moveLn][col+2*moveCol])
+                        stop = true
+                    end if
+                end if
+            else if moveCol == -1
+                if col > 1
+                    if array[ln][col-2]
+                        moveCol = 0
+                        moveLn = -1
+                        if array[ln-1][col+1] || array[ln+2*moveLn][col+2*moveCol]
+                            stop = true
+                        end if
+                    end if
+                else if col == 0
+                    moveCol = 0
+                    moveLn = -1
+                    if array[ln-1][col+1] || array[ln+2*moveLn][col+2*moveCol]
+                        stop = true
+                    end if
+                end if
+                
+            else if moveLn = 1
+                if ln < n-2
+                    if array[ln+2][col]
+                        moveCol = -1
+                        moveLn = 0
+                        if array[ln-1][col-1] || array[ln+2*moveLn][col+2*moveCol]
+                            stop = true
+                        end if
+                    end if
+                else if ln == n-1
+                    moveCol = -1
+                    moveLn = 0
+                    if array[ln-1][col-1] || array[ln+2*moveLn][col+2*moveCol]
+                        stop = true
+                    end if
+                end if
+            else if moveLn = -1
+                if ln > 1
+                    if array[ln-2][col]
+                        moveCol = 1
+                        moveLn = 0
+                        if array[ln+1][col+1] || array[ln+2*moveLn][col+2*moveCol]
+                            stop = true
+                        end if
+                    end if
+                else if ln == 0
+                    moveCol = -1
+                    moveLn = 0
+                    if array[ln+1][col+1] || array[ln+2*moveLn][col+2*moveCol]
+                        stop = true
+                    end if
+                end if
+            end if
+        end while
+    end
+    
+#1-16. Quelle est la complexité
+a) d’un algorithme de parcours d’un tableau n x n ?
+b) des algorithmes que vous avez écrits pour les exercices : "Les nuls", "Tous positifs", "Le carré magique" et "Le contour d’un tableau" ?
+c) des algorithmes que vous avez écrits pour résoudre les exercices du pinceau ?
+
+S : a) 
+    b) 
+    c) 
+    
+#3-1. Écrire un algorithme qui crée la liste suivante :
+0. 494
+1. 209
+2. 425
+affiche sa taille, demande si la valeur 425 est présente, supprime la valeur 209 puis insère la valeur 101 en tête de liste.
+
+S : algorithm createList() -> void
+        list: List of Integers
+        list.add(494)
+        list.add(209)
+        list.add(425)
+        print list.size()
+        list.contains(425)
+        list.remove(list.indexOf(209))
+        list.add(0, 101)
+    end

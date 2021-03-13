@@ -1,0 +1,79 @@
+#3-1. Voici 5 expressions d’algèbre relationnelle :
+1) π{npro, prix} (produit)
+2) σ{qcom > 500} (detail)
+3) π{ncom}(σ{ncom > 30185} (detail))
+4) π{nom} (σ{cat IS null} (client))
+5) π{npro, libelle} (σ{qstock = 0}(produit))
+Pour chaque expression faites :
+a) la liste des données qu’elle retourne en partant des données des tables ci-dessus
+b) la requête SQL correspondante
+
+R : 1) a)  npro  prix
+          CS262    75
+          CS264   120
+           PA45   105
+          PH222   230
+          PS222   185
+          CS464   220
+           PA60    95
+       b) SELECT npro, prix FROM produit
+    2) a)  ncom    npro  qcom
+          30185   PS222   600
+       b) SELECT * FROM detail WHERE qcom>500
+    3) a)  ncom
+          30186
+          30188
+       b) SELECT DISTINCT ncom FROM detail WHERE ncom>30185
+    4) a)     nom
+           NEUMAN
+          MERCIER
+       b) SELECT DISTINCT nom FROM client WHERE cat IS null
+    5) a) Aucun résultat car aucun qstock n'est égal à 0
+       b) SELECT npro, libelle FROM produit WHERE qstock=0
+
+#3-2. Répondez aux questions suivantes, par une requête SQL :
+1. Afficher tous les attributs de tous les produits
+2. Afficher le libellé et le prix de tous les produits
+3. Afficher le libellé et le prix de tous les produits qui coûtent plus de 200 euros
+4. Afficher le numéro, le nom et la localité des clients de catégorie C1 n’habitant pas à Toulouse.
+5. Afficher tous les attributs des produit dont le libellé contient le mot “ACIER”. (à la casse près).
+6. Afficher la liste des localités dans lesquelles il existe au moins un client (sans doublons).
+7. Quelles sont les catégories des clients qui habitent à Toulouse ?
+8. Afficher la liste des produits (numéro et libellé) dont le prix est compris entre 100 et 150 euros, bornes comprises
+9. Afficher la liste des produits (numéro et libellé) dont le prix est compris entre 100 et 150 euros, bornes exclues
+10. Donner le numéro, le nom et le compte des clients de Poitiers et de Bruxelles dont le compte est positif.
+11. Afficher le numéro, le nom et la localité des clients dont le nom précède alphabétiquement la localité où ils résident.
+12. Afficher les clients habitant à Lille ou à Namur
+13. Afficher les clients qui n’habitent ni à Lille ni à Namur
+14. Afficher les clients de catégorie C1 habitant à Namur
+15. Afficher les clients qui sont de catégorie C1 ou qui habitent à Namur
+16. Afficher les clients de catégorie C1 n’habitant pas à Namur
+17. Afficher les clients qui ne sont pas de catégorie C1 ou qui sont de Namur
+18. Afficher les clients qui soit sont de catégorie B1 ou C1, soit habitent à Lille ou à Namur (ou les deux conditions)
+19. Afficher les clients qui soit sont de catégorie B1 ou C1, soit habitent à Lille ou à Namur (mais pas les deux conditions)
+20. Afficher les clients qui sont de catégorie B1 ou C1, et qui habitent à Lille ou à Namur
+21. Afficher les clients qui ne sont ni de catégorie B1 ni C1, et qui n’habitent ni Lille ni à Namur
+
+R : 1) SELECT * FROM produit;
+    2) SELECT libelle, prix FROM produit;
+    3) SELECT libelle, prix FROM produit WHERE prix>200;
+    4) SELECT ncli, nom, localite FROM client WHERE where cat='C1' AND localite!='Toulouse';
+    5) SELECT * FROM produit WHERE libelle='ACIER';
+    6) SELECT DISTINCT localite FROM client;
+    7) SELECT DISTINCT cat FROM client WHERE localite='Toulouse';
+    8) SELECT npro, libelle FROM produit WHERE prix BETWEEN 100 AND 150;
+       SELECT npro, libelle FROM produit WHERE prix >= 100 AND prix <= 150;
+    9) SELECT npro, libelle FROM produit WHERE prix BETWEEN 101 AND 149;
+       SELECT npro, libelle FROM produit WHERE prix > 100 AND prix < 150;
+    10) SELECT ncli, nom, compte FROM client WHERE (localite='Poitiers' OR localite='Bruxelles') AND compte>=0;
+    11) SELECT ncli, nom, localite FROM client WHERE nom<localite;
+    12) SELECT * FROM client WHERE localite='Lille' OR localite='Namur';
+    13) SELECT * FROM client WHERE localite!='Lille' AND localite!='Namur';
+    14) SELECT * FROM client WHERE cat='C1' AND localite='Namur';
+    15) SELECT * FROM client WHERE cat='C1' OR localite='Namur';
+    16) SELECT * FROM client WHERE cat='C1' AND localite!='Namur';
+    17) SELECT * FROM client WHERE cat!='C1' OR localite='Namur';
+    18) SELECT * FROM client WHERE cat='B1' OR cat='C1' OR localite='Lille' OR localite='Namur';
+    19) SELECT * FROM client WHERE
+    20) SELECT * FROM client WHERE
+    21) SELECT * FROM client WHERE

@@ -1,0 +1,612 @@
+#1-3. Un dé est truqué de sorte qu’en le lançant, la probabilité d’obtenir 6 vaut le triple de celle d’obtenir toute autre valeur. Avec ce dé, quelle est la probabilité d’obtenir un point pair ?
+
+R : P(1)=1/8, P(2)=1/8, P(3)=1/8, P(4)=1/8, P(5)=1/8, P(6)=3/8
+    P(Pair) = P(2)+P(4)+P(6) = 1/8+1/8+3/8 = 5/8
+
+#1-4. Trois chevaux sont en course. Le premier à 2 fois plus de chances de gagner que le deuxième, celui-ci a aussi 2 fois plus de chances de gagner que le troisième. Quelles sont les probabilités de gagner de chacun des trois chevaux ?
+
+R : Cheval :   1    2    3                 Cheval :   1    2    3
+    Proba  :  4x   2x    x   => x=1/7   => Proba  : 4/7  2/7  1/7
+    x = 1/7
+    
+#1-5. Soit un jeu de 52 cartes dont on tire une carte au hasard. On définit les évènements aléatoires suivants : A : obtenir un as, B : obtenir une carte rouge, C : obtenir un cœur. Définissez les évènements suivants et calculez-en la probabilité :
+a) A ∩ B
+b) B ∩ C
+c) A U C
+d) B U C
+
+R : a) AetB = As rouge => P(AetB) = 2/52 (il y a deux as rouges dans le jeu)
+	b) BetC = Carte rouge et coeur (= Carte coeur) => P(BetC)=P(C) = 13/52 = 1/4 (Il y a 13 coeurs dans le jeu)
+	   P(XetY) = P(X)*P(Y)
+	c) AouC = As ou coeur = P(AouC) = 13/52+3/52 = 16/52 = 4/13
+	d) BouC = Carte rouge ou coeur (= Carte rouge) => P(BouC)=P(B) = 26/52 = 1/2
+	   P(XouY) = P(X)+P(Y)-P(AetY)
+	   P(BouC) = 4/52+13/52-1/52 = 26/52 = 1/2
+	   
+#1-9. Soit un groupe composé de 12 hommes dont la moitié a des lunettes et de 15 femmes dont le tiers a des lunettes. Si on choisit une personne au hasard dans ce groupe, quelle est la probabilité que cette personne soit un homme ou porte des lunettes ?
+
+R :        Lunettes   !Lunettes   Total
+    Hommes  x=6         y=6        12
+    Femmes  z=5          10        15
+    Total    11          16      t=27
+    
+    x=y=z/t => 6+6+5/27 = 17/27
+    
+    P(Homme ou Lunettes) = P(Homme) + P(Lunettes) - P(Homme et Lunettes)
+    P(H ou L) = 12/27+11/27-6/27 = 17/27
+    
+    Via complémentaire (Loi de Morgan) :
+    P(Homme ou Lunettes) = 1-P(Femmes et !Lunettes)
+    P(H ou L) = 1-10/27 = 27/27-10/27 = 17/27
+    
+#1-10. Lors de vacances scolaires, deux activités sportives sont proposées : natation et vélo. On sait que 40% des participants se sont inscrits à la natation, 50% aux randonnées vélo et 25% se sont inscrits au deux. Quelle est la probabilité qu’un participant choisi au hasard ne fasse pas de sport ?
+
+R :           Vélo   !Vélo   Total
+    Natation   25%     15%    40%
+    !Natation  25%   x=35%    60%
+    Total      50%     50%   100%
+    
+    P(Pas de sport) = 35%
+    
+    P(!Sport) = 1 - P(Natation ou Vélo)
+    P(!Sport) = 1 - P(Natation) + P(Vélo) - P(Natation et Vélo)
+    P(!Sport) = 1 - 40%+50%-25% = 100%-40%+50%-25% = 35%
+    
+#1-11. Un marchand d’électro-ménager a réalisé des statistiques sur les ventes de frigos tout au long du mois de décembre dernier. Les probabilités du nombre de frigos vendus par jour sont données dans le tableau suivant :
+
+    Nombre de frigos vendus par jour   Probabilité
+                   0                        0.2
+                   1                        0.4
+                   2                        0.3
+               Au moins 3                   0.1
+               
+a) Quelle est la probabilité qu’il vende au moins un frigo ?
+b) Quelle est la probabilité qu’il ne vende pas de frigos sur 2 jours consécutifs ?
+c) Quelle est la probabilité qu’il vende un et un seul frigo sur 3 jours consécutifs ?
+
+R : a) P(Vendre au moins 1 Frigo) = P(1 Frigo ou 2 Frigos ou au moins 3 frigos)
+       = P(1) + P(2) + P(3 ou plus) = 0.4+0.3+0.1 = 0.8 = 80%
+       P(Vendre au moins 1 Frigo) = 1-P(0 Frigo) = 1-0.2 = 0.8 = 80%
+    b) P(Pas de Frigo vendu en 2 jours) = P(0 Frigo [jour1] et 0 Frigo [jour2])
+       = P(0 Frigo [jour1]) * P(0 Frigo [jour2]) = 0.2*0.2 = 0.04 = 4%
+    c) P(1 Frigo en 3 jours) = 3 cas possibles : P(1 Frigo [jour1] et 0 Frigo [jour2] et 0 Frigo [jour3]
+                                                ou 0 Frigo [jour1] et 1 Frigo [jour2] et 0 Frigo [jour3]
+                                                ou 0 Frigo [jour1] et 0 Frigo [jour2] et 1 Frigo [jour3])
+       = (O.4*0.2*0.2) + (O.2*0.4*0.2) + (O.2*0.2*0.4)
+       = 3 * (0.4*0.2*0.2) 
+       = 3*0.016 
+       = 0.048 = 4.8%
+       
+#1-12. On jette 3 fois un dé « normal ». Calculez :
+a) la probabilité d'obtenir le point 6 exactement une fois.
+b) la probabilité d'obtenir le point 6 au moins une fois.
+c) la probabilité d’obtenir 3 points différents.
+
+R : a) P(Une fois 6 en 3 coups) = 3 cas possibles : P(6 [coup1] et !6 [coup2] et !6 [coup3]
+                                                  ou !6 [coup1] et 6 [coup2] et !6 [coup3]
+                                                  ou !6 [coup1] et !6 [coup2] et 6 [coup3])
+       = 3 * (1/6*5/6*5/6)
+       = 3 * 25/216 = 25/72
+    b) P(6 au moins une fois) = 1-P(Jamais 6) = 1-(5/6*5/6*5/6)
+                                                = 1-125/216
+                                                = 91/216
+    c) P(3 différents) = P(1er = 1er et 2eme != 1er et 3eme != deux premiers)
+                       = 6/6*5/6*4/6
+                       = 1*20/36 = 5/9
+       
+#1-13. On tire trois cartes avec remise intermédiaire dans un jeu de 52 cartes. Calculez :
+a) la probabilité que la deuxième carte soit un roi et la troisième différente d'un roi.
+b) la probabilité qu’exactement deux des cartes soient un roi.
+c) la probabilité de tirer trois fois la même carte.
+
+R : a) P(1ere = 1ere et 2eme = roi et 3eme != roi) = 1 * 4/52 * 48/52 = 1*1/13*12/13 = 12/169
+    b) P(Deux des cartes sont un roi) = 3 cas possibles : P(Roi [carte1] et Roi [carte2] et !Roi [carte3]
+                                                         ou Roi [carte1] et !Roi [carte2] et Roi [carte3]
+                                                         ou !Roi [carte1] et Roi [carte2] et Roi [carte3])
+       = 3 * (4/52*4/52*48/52)
+       = 3 * (1/13*1/13*12/13)
+       = 3 * 12/2197 = 36/2197
+    c) P(Carte1 = Carte2 = Carte3) = P(1ere = 1ere et 2eme = 1ere et 3eme = 1ere)
+                                   = 52/52*1/52*1/52
+                                   = 1*(1/52)² = 1/2704
+                                   
+#1-16. On tire 2 cartes dans un jeu de 52 cartes sans remise intermédiaire :
+a) La première carte est un roi. Quelle est la probabilité que la deuxième carte soit encore un roi ?
+b) Quelle est la probabilité d’obtenir deux rois ?
+c) Quelle est la probabilité d'obtenir au moins un roi ?
+
+R : a) P(2ème carte Roi | 1ère carte Roi) = 3/51
+    b) P(1ère Roi et 2ème Roi)
+       = 4/52*3/51 = 1/13*1/17 = 1/221
+    c) P(Au moins 1 Roi) = 1-P(Aucun Roi)
+       = P(1ère pas Roi) * P(2ème pas Roi| 1 ère pas Roi)
+       = 48/52*47/51
+       P(AetB) = P(A) * P(B|A)
+       
+#1-17. Trois personnes tirent sans remise un billet au hasard dans un ensemble de billets numérotés de 1 à 20. Quelle est la probabilité que les trois billets soient impairs ?
+
+R : P([Billet1] impair et [Billet2] impair et [Billet3] impair)
+    = P([Billet1] impair) * P([Billet2] impair | [Billet1] impair) * P([Billet3] impair | [Billet1] impair et [Billet2] impair)
+    = 10/20*9/20*8/20
+    = 1/2*9/20*2/5 = 9/100 = 9% = 0,09
+    
+#1-18. Un sac contient 3 boules blanches et 7 boules noires. Quatre personnes A, B, C et D tirent dans cet ordre une boule sans la remettre dans le sac. La première personne qui tire une boule blanche gagne le jeu. Calculez les probabilités de gagner le jeu pour chacune des personnes.
+
+R : P(A gagne) = 3/10
+    P(B gagne) = P(A noir et B blanche)
+               = P(A noire)*(B blanche | A noire)
+               = 7/10*3/9 = 7/10*1/3 = 7/30
+    P(C gagne) = P(A noire et B noire et C blanche)
+               = P(A noire) * P(B noire | A noire) * P(C blanche | A noire et B noire)
+               = 7/10*6/9*3/8 = 7/10*1/3*3/4 = 21/120
+    P(D gagne) = P(A noire et B noire et C noire et D blanche)
+               = P(A noire) * P(B noire | A noire) * P(C noire | A noire et B noire) * P(D blanche | A noire et B noire et C noire)
+               = 7/10*6/9*5/8*3/7 = 1/10*5/4 = 1/8
+               
+#1-21. Dans un certain pays, la population en âge de travail est répartie de la manière suivante :
+    - 51 % sont des hommes possédant un emploi
+    - 3 % sont des hommes au chômage
+    - 41 % sont des femmes possédant un emploi
+    - 5 % sont des femmes au chômage.
+Calculez la probabilité :
+a) qu’une personne choisie au hasard soit un homme
+b) qu’une personne choisie au hasard soit un chômeur
+c) qu’un chômeur choisi au hasard soit un homme
+d) qu’un homme choisi au hasard soit un chômeur
+
+R :         Hommes   Femmes   Total
+    Emploi     51%      41%     92%
+    Chômage     3%       5%      8%
+    Total      54%      46%    100%
+    
+    a) P(Homme) = 51%+3% = 54%
+    b) P(Chômeur) = 3%+5% = 8%
+    c) P(Homme | Chômeur)
+       = P(Homme et Chômeur)/P(Chômeur)
+       = 3%/8% = 3/8 = 37,5%
+    d) P(Chômage | Homme)
+       = P(Chômage et Homme)/P(Homme)
+       = 3%/54% = 3/54 = 1/18 = 5,55%
+       
+#1-22. On dispose de 2 urnes U1 (5 boules rouges et 3 boules blanches) et U2 (4 boules rouges et 6 boules blanches). Des tirages sont effectués suivant les règles suivantes : si une boule rouge a été tirée le tirage suivant se fait dans la même urne, si une boule blanche a été tirée le tirage suivant se fait dans l’autre urne. Le premier tirage se fait dans U1. Si les tirages se font sans remise, quelles sont les probabilités d’obtenir :
+a) trois boules rouges en 3 tirages.
+b) trois boules blanches en 3 tirages.
+c) une boule blanche suivie de deux boules rouges en 3 tirages.
+d) une boule rouge en troisième sachant que les deux premières sont blanches.
+
+R : (Voir 1-22.png)
+    
+    a) P([Boule1] rouge U1 et [Boule2] rouge U1 et [Boule3] rouge U1)
+       = P([Boule1] rouge U1) * P([Boule2] rouge U1 | [Boule1] rouge U1) * P([Boule3] rouge U1 | [Boule1] rouge U1 et [Boule2] rouge U1)
+       = 5/8*4/7*3/6 = 5/2*1/7*1/2 = 5/28
+    b) P([Boule1] blanche U1 et [Boule2] blanche U2 et [Boule3] blanche U1)
+       = P([Boule1] blanche U1) * P([Boule2] blanche U2 | [Boule1] blanche U1) * P([Boule3] blanche U1 | [Boule1] blanche U1 et [Boule2] blanche U2)
+       = 3/8*6/10*2/7 = 3/2*3/10*1/7 = 9/140
+    c) P([Boule1] blanche U1 et [Boule2] rouge U1 et [Boule3] rouge U2)
+       P([Boule1] blanche U1) * P([Boule2] rouge U2 | [Boule1] blanche U1) * P([Boule3] rouge U2 | [Boule1] blanche U1 et [Boule2] rouge U2)
+       = 3/8*4/10*3/9
+    d) P([Boule3] rouge | [Boule1] blanche U1 et [Boule2] blanche U2)
+       = 5/7
+       
+#1-24. Soient deux dés A et B ayant respectivement 4 faces rouges et 2 blanches, 4 faces blanches et 2 rouges. On choisit un des deux dés avec une pièce tombant deux fois plus souvent sur pile que sur face : pile donne le dé A et face donne le dé B. Ensuite on jette le dé choisi et on regarde la couleur obtenue :
+a) Quelle est la probabilité d'obtenir une face rouge ?
+b) Quelle est la probabilité d’obtenir une face blanche ?
+c) On répète tout le processus 3 fois de suite. Quelle est la probabilité d'obtenir rouge aux 3 lancés si on a obtenu rouge aux 2 premiers lancés ?
+
+R : (Voir 1-24.png)
+    a) P(Rouge) = (2/3*2/3)+(1/3*1/3) = 5/9
+    b) P(Blanc) = (2/3*1/3)+(1/3*2/3) = 4/9
+       = 1-P(Rouge) = 1-5/9 = 4/9
+    c) P(3 fois rouge | Rouge aux 2 premiers lancers)
+       = P(Rouge) = 5/9
+       
+#1-25. Un fabricant de baromètres a testé un nouveau modèle très simple, et a constaté que celui-ci était de temps en temps inexact : pour 10% des jours où il pleuvait, il affichait "beau temps" et pour 30% des jours où il faisait beau, il affichait "pluie". Sachant que le baromètre a été vendu dans une région où il pleut en moyenne 1 jour sur 5 :
+a) quelle est la probabilité que le baromètre indique ‘pluie’ ?
+b) quelle est la probabilité que l’indication du baromètre soit correcte ?
+
+R : (Voir 1-25.png)
+    a) P(Affiche Pluie) = (1/5*9/10)+(4/5*3/10) = 21/50 = 0.42
+    b) P(Indication correcte) = (1/5*9/10)+(4/5*7/10) = 37/50 = 0.74
+    
+#1-26. Un patineur participe à une compétition. Deux de ses sauts l'inquiètent. Il ne réussit le premier saut périlleux que dans 95% des cas. Comme il est émotif, s'il ne réussit pas ce premier saut, il rate le deuxième 3 fois sur 10; sinon, si tout va bien au premier saut, il réussit le deuxième dans 90% des cas :
+a) Calculer la probabilité que le patineur réussisse le 2ème saut.
+b) Calculez la probabilité que le patineur rate le deuxième saut sachant que le 1 er était réussi.
+c) Calculez la probabilité que le patineur réussisse les deux sauts.
+
+R : (Voir 1-26.png)
+    a) P(2ème Saut Réussi) = (95%*90%)+(5%*70%) = 89%
+    b) P(2ème Saut Raté | 1er Saut Réussi) = 10%
+    c) P(2 Sauts Réussis) = P(1er Saut Réussi et 2ème Saut Réussi) = 95%*90% = 171/200 = 0.855
+    
+#1-27. Marcel travaille 5 jours par semaine. Chaque jour, il quitte habituellement son bureau vers 17 heures et se rend à pied à son domicile. Quand il passe devant le Café des Sports, il y aperçoit une fois sur deux son copain Antoine avec lequel il ne manque jamais de déguster une de ses bières préférées. Plus loin, au Café de la Gare, il rencontre également une fois sur deux son autre copain Emile, avec lequel il ne peut non plus refuser de faire la causette devant un autre verre. Evidemment, les rencontres avec Antoine ou Emile sont indépendantes les unes des autres ; parfois il rencontre les deux, parfois un seul, et parfois aucun des deux. Enfin, quand il arrive devant chez lui, il sort de sa poche un trousseau avec 3 clés, dont une seule ouvre la porte d'entrée. Quand Marcel n'a rien bu, ses pensées sont lucides, et il ouvre la porte immédiatement avec la bonne clé. Quand il a bu un verre de bière, il ne reconnaît pas directement la bonne clé, aussi il les essaye toutes les trois une par une jusqu'à ce que la porte s'ouvre. Enfin, quand il a bu deux bières, il ne réfléchit plus à ce qu'il fait, et après chaque essai de clé, il secoue chaque fois son trousseau et réessaye jusqu'à ce que la porte s'ouvre enfin (il peut donc réessayer plusieurs fois la même clé!)
+Calculez à partir de ces données les probabilités que:
+a) Marcel ouvre la porte du premier coup à la fin d’une journée de travail.
+b) Marcel ouvre la porte en deux essais à la fin d’une journée de travail.
+c) Marcel ouvre la porte en au plus deux essais à la fin d’une journée de travail.
+d) Marcel ouvre la porte en au moins trois essais à la fin d’une journée de travail.
+
+R : (Voir 1-27.png)
+    a) P(Bonne clé Premier coup) = (1/4*1)+(2/4*1/3)+(1/4*1/3) = 1/2
+    b) P(Bonne clé 2 essais) = (2/4*2/3*1/2)+(1/4*2/3*1/3) = 2/9
+    c) P(Bonne clé 2 essais max) = P(Bonne clé Premier coup ou Bonne clé 2 essais) = réponse a) + réponse b)
+       = 1/2 + 2/9 = 13/18
+    d) P(Bonne clé 3 essais min) = 1-P(Bonne clé 2 essais max) = 1-réponse c)
+       = 1 - 13/18 = 5/18
+       
+#1-31. Une personne envisage d'acheter une voiture d'une certaine marque et apprend via un magazine spécialisé que 5% de ces véhicules ont un problème de transmission. Un mécanicien vient apporter son aide pour juger de l'état du véhicule : sur toutes les autos défectueuses qu'il a examinées dans le passé, il a décelé l'état défectueux dans 90% des cas. Pour les bonnes voitures son jugement est également bon : il les déclare « bonne » dans 80% des cas. Quelle est la probabilité que la voiture que la personne envisage d'acheter ait un problème de transmission :
+a) avant d'avoir l'avis du mécanicien ?
+b) si le mécanicien déclare le véhicule défectueux ?
+c) si le mécanicien déclare le véhicule en bon état ?
+
+R : (Voir 1-31.png)
+    a) P(Voiture a problème) = 5%
+    b) P(Voiture a problème | Mécanicien pas OK) = P(Voiture a problème et Mécanicien pas OK) / P(Mécanicien pas OK)
+       = (5%*90%)/((5%*90%)+(95%*20%))
+       = (9/200)/(47/100) = 9/47
+    c) P(Voiture a problème | Mécanicien OK) = P(Voiture a problème et Mécanicien OK) / P(Mécanicien OK)
+       = (5%*10%)/((5%*10%)+(95%*80%))
+       = (1/200)/(153/200) = 1/153
+
+#1-32. Dans une usine, 3 machines M1, M2, M3 fabriquent des stylos. Par jour, la machine M1 en fabrique 1000 dont 3% de défectueux, la machine M2 en fabrique 2000 dont 2% de défectueux et la machine M3 en fabrique 3000 dont 1% de défectueux :
+a)En fin de journée, on choisit un stylo au hasard parmi les 6000 stylos produits. Quelle est la probabilité de tirer un stylo défectueux ?
+b) On constate que le stylo choisi est défectueux. Quelle est la probabilité qu’il provienne de M2 ?
+
+R : (Voir 1-32.png)
+    a) P(Stylo pas OK) = (1/6*3%)+(2/6*2%)+(3/6*1%) = 1/200+1/150+1/200 = 1/60
+    b) P(M2 | Stylo pas OK) = P(M2 et Stylo pas OK) / P(Stylo pas OK)
+       = (2/6*2%)/réponse a) = (2/6*2%)/(1/60) = 2/5
+
+#1-34. Pour se rendre à l’école, Gontran utilise les transports en commun. Il prend le métro 2 fois plus souvent que le bus, et il prend le bus 2 fois plus souvent que le tram. Les probabilités respectives d’arriver en retard en prenant le bus, le tram et le métro sont de 0,3, 0,2 et 0,1 :
+a) Quelle est la probabilité que Gontran arrive en retard ?
+b) Quelle est la probabilité que Gontran prenne le métro et n’arrive pas en retard ?
+c) Sachant que Gontran est arrivé en retard, quelle est la probabilité qu’il ait pris le tram ?
+d) Quelle est la probabilité que Gontran arrive en retard 2 jours de suite ?
+
+R : (Voir 1-34.png)
+    a) P(Retard) = (4/7*10%)+(2/7*30%)+(1/7*20%) = 6/35
+    b) P(Métro et À l'heure) = 4/7*90% = 18/35
+    c) P(Tram | Retard) = P(Tram et Retard) / P(Retard)
+       = (1/7*20%)/réponse a) = (1/7*20%)/(6/35) = 1/6
+    d) P(Retard 2 jours de suite) = P(Retard jour 1 et Retard jour 2) = P(Retard)*P(Retard)
+       = (6/35)^2 = 36/1275
+       
+#2-1. Donnez la distribution de probabilité, la fonction de répartition, l’espérance mathématique et l’écart-type des variables aléatoires suivantes :
+a) On lance un dé bien équilibré : si le point est impair on gagne autant d’euros que le point indiqué, s'il est pair on perd autant d’euros que le point indiqué.
+b) Une urne contient 13 boules blanches et 7 boules noires. Si on tire une boule noire on gagne 20€, sinon on perd 15 €.
+c) On joue à 'pile' ou 'face' avec 2 pièces bien équilibrées. Si les côtés sont 2 'pile' on gagne 10€, sinon on perd 5 €.
+d) On tire successivement et avec remise 3 fruits d'une corbeille contenant 6 oranges et 3 pommes. Soit X le nombre de pommes tirées.
+
+R : a) X = gain du jeu de dé
+       valeurs possibles de X = oméga = -6, -4, -2, 1, 3, 5
+    
+       Xi    Pi   F(Xi)
+       -6   1/6   1/6
+       -4   1/6   2/6
+       -2   1/6   3/6
+        1   1/6   4/6
+        3   1/6   5/6
+        5   1/6   6/6=1
+     
+        espérance = E[X] = µ = 1/6*(-6-4-2+1+3+5) = -1/2 = -0.5€
+        variance = sigma^2 = 1/6*((-6)^2+(-4)^2+(-2)^2+1^2+3^2+5^2)-(-0.5)^2
+                           = 1/6*(36+16+4+1+9+25)-0.25
+                           = 179/12
+        écart-type = sigma = sqrt(179/12) = 3.86€
+
+#2-2. Un représentant d'un grand laboratoire pharmaceutique téléphone à une pharmacie 3 fois par an. Au premier appel, il a 8 chances sur 10 de réaliser une vente. Ensuite, la probabilité de réaliser une vente dépend de ce qui a précédé : si l'appel suit une vente, la probabilité d'une nouvelle vente est de 0.9, sinon elle est de 0.4. Soit la variable aléatoire du nombre total de ventes par an. Fournissez la distribution de probabilité, la fonction de répartition, l'espérance mathématique et l’écart-type. Quelle est la probabilité de réaliser au moins 2 ventes ?
+
+R : (Voir 2-2.png)
+    X = nombre de ventes par an
+    valeurs possibles de X = oméga = 0, 1, 2, 3
+    
+    P[X=0] = 2%*6%*%6 = 9/125
+    P[X=1] = (80%*10%*60%)+(20%*40%*10%)+(20%*60%*40%) = 13/125
+    P[X=2] = (80%*90%*10%)+(80%*10%*40%)+(20%*40%*90%) = 22/125
+    P[X=3] = 80%*90%*90% = 81/125
+    
+    Xi       Pi    F(Xi)
+     0    9/125    9/125
+     1   13/125   22/125
+     2   22/125   44/125
+     3   81/125        1
+     
+    espérance = E[X] = µ = (0*9/125)+(1*13/125)+(2*22/125)+(3*81/125) = 62/25
+    variance = sigma^2 = ((0^2)*9/125)+((1^2)*13/125)+((2^2)*22/125)+((3^2)*81/125)-(62/25)^2
+                       = 306/625
+    écart-type = sigma = sqrt(306/625) = 0.6997142...
+     
+#2-4. Un installateur de frigos en commande 3 nouveaux qui sont garantis par le vendeur. Chaque réfrigérateur a une probabilité de 0.2 d’être défectueux. Soit X la variable aléatoire du nombre total de réfrigérateurs défectueux.
+a) Fournissez (valeurs et graphique) la distribution de probabilité de X
+b) Fournissez (valeurs et graphique) la fonction de répartition de X
+c) Calculez l’espérance mathématique et l’écart-type de X
+d) Le contrat de garantie stipule que les frais de réparation comportent une partie fixe de 25 € et une composante variable de 35 € par réfrigérateur à réparer. Quelle est l’espérance des frais de réparation dans le cas de la commande de 3 frigos ?
+
+R : a) & b)
+    X = nombre de frigos défectueux
+    valeurs possibles de X = oméga = 0, 1, 2, 3
+    
+    P[X=0] = 80%*80%*80% = 64/125
+    P[X=1] = 3*(20%*80%*80%) = 48/125
+    P[X=2] = 3*(20%*20%*80%) = 12/125
+    P[X=3] = 20%*20%*20% = 1/125
+    
+    Xi       Pi     F(Xi)
+     0   64/125    64/125
+     1   48/125   112/125
+     2   12/125   124/125
+     3    1/125         1
+     
+    c) espérance = E[X] = µ = (0*64/125)+(1*48/125)+(2*12/125)+(3*1/125)
+                            = 3/5
+       variance = sigma^2 = ((0^2)*64/125)+((1^2)*48/125)+((2^2)*12/125)+((3^2)*1/125)-(3/5)^2
+                          = 12/25
+       écart-type = sigma = sqrt(12/25) = 0.69282...
+       
+    d) Y = frais de réparation des frigos défectueux
+    
+       Xi    Yi       Pi     F(Xi)
+        0     0   64/125    64/125
+        1    60   48/125   112/125
+        2    95   12/125   124/125
+        3   130    1/125         1
+        
+       espérance = E[Y] = µ = (0*0)+(60*48/125)+(95*12/125)+(130*1/125)
+                            = 166/5 = 33.2€
+       
+#2-5. Un jeu très simple consiste à lancer 2 dés. Un gain est associé au lancé de la façon suivante : si on obtient un double 6, on gagne 5 € ; si obtient un seul 6, on gagne 2 €. Dans tout les autres cas, on perd 1 €.
+a) Donnez la distribution de probabilité de la variable aléatoire représentant le gain associé à ce jeu.
+b) Calculez l’espérance mathématique et l’écart-type de cette variable aléatoire. Ce jeu vous semble-t-il équitable ? Pourquoi ? Combien doit-on s’attendre à gagner à ce jeu si on joue 20 fois de suite ?
+c) Marc Naqueur, le célèbre tricheur professionnel, a fabriqué un dé truqué : la probabilité que ce dé tombe sur 6 est 3 fois plus élevée que la probabilité qu’il tombe sur n’importe quel autre point. Pour camoufler sa fraude, il l’utilise avec un dé normal dans le jeu décrit ci-dessus. Quelle est alors l’espérance de gain de Marc Naqueur ? Combien de fois en moyenne doit-il jouer à ce jeu pour espérer gagner 50 € ?
+
+R : a) X = gain d'un jeu de dés
+       valeurs possibles = oméga = -1, 2, 5
+       
+       P[X=-1] = P(Pas de 6) = 5/6*5/6 = 25/36
+       P[X=2] = P(Un seul 6) = (1/6*5/6)+(5/6*1/6) = 10/36
+       P[X=5] = P(Deux 6) = 1/6*1/6 = 1/36
+       
+       Xi      Pi   F(Xi)
+       -1   25/36   25/36
+        2   10/36   35/36
+        5    1/36       1
+        
+    b) espérance = E[X] = µ = (-1*25/36)+(2*10/36)+(5*1/36)
+                            = 0/36 = 0€
+       variance = sigma^2 = (((-1)^2)*25/36)+((2^2)*10/36)+((5^2)*1/36)-(0^2)
+                          = 10/4
+       écart-type = sigma = sqrt(10/4) = 1.5811388...
+       
+    c) P(Dé truqué tombe sur 6) = 3/8
+       
+       P(X=-1) = P(Pas de 6) = 5/6*5/8 = 25/48
+       P(X=2) = P(Un seul 6) = (1/6*5/8)+(5/6*3/8) = 5/12
+       P(X=5) = P(Deux 6) = 1/6*3/8 = 1/16
+       
+       Xi      Pi   F(Xi)
+       -1   25/48   25/48
+        2    5/12   45/48
+        5    1/16       1
+        
+       espérance = E[X] = µ = (-1*25/48)+(2*5/12)+(5*1/16) = 15/24 = 0.625€
+       
+       Coups pour espérer gagner 50€ = 50/0.625 = 80
+       
+#2-9. Pour être certain d'obtenir au moins un garçon, un couple décide d'avoir 5 enfants. Quelles sont ses chances de succès si la probabilité de naissance d'un garçon est de 0.52 ?
+
+R : n = 5 (= Nombre d'enfants du couple)
+    p = 52% (= Probabilité de succès)
+    q = 1-52% = 48% (= Probabilité d'échec)
+    X = Nombre de garçons en 5 naissances
+    P(Avoir au moins 1 garçon) = 1-P(Avoir 0 garçon)
+    P[X>=1] = 1-P[X=0]
+                 0
+            = 1-C *(52%)^0*(48%)^5
+                 5
+            = 1-1*(48%)^5 = 1-(48%)^5
+            = 9516793/9765652
+            = 0.9745169...
+       
+#2-11. En jetant 6 fois une paire de dés quelle est la probabilité d'avoir un total de 9 à 2 reprises ? A au moins 2 reprises ?
+
+R : 9 = 3+6 = 6+3 = 4+5 = 5+4
+    => 4/36 possiblités d'obtenir 9 = 1/9
+    
+    n = 6 (= Nombre de lancers)
+    p = 1/9 (= Probabilité d'obtenir 9)
+    q = 1-1/9 = 8/9 (= Probabilité de ne pas obtenir 9)
+    X = nombre de 9 obtenus en 6 lancers ~ B(6, 1/9)
+
+     X       n!         2
+    C = ----------- => C = 6!/(2!*(6-2)!) = 6!/(2!*4!) = 6*5/2 = 15
+     n   X!*(n-X)!      6
+     
+              X                   2
+    P[X=2] = C *(p)^X*(q)^(n-X)= C *(1/9)^2*(8/9)^(6-2) = 15*1/81*(8/9)^4 = 0.1156102...
+              n                   6
+              
+#2-13. Combien de fois doit-on jeter un dé pour que la probabilité d'obtenir au moins une fois la face 6 soit plus grande que 0.9 ?
+
+R : n = ?
+    p = 1/6
+    q = 5/6
+    X = Nombre de 6
+    
+    P(Au moins un 6) = P[X>=1]>=0.9
+    1-P[X=0]>=0.9
+    -P[X=0]>=-0.1
+    P[X=0]<=0.1 (Probabilité de n'avoir que des échecs)
+    (5/6)^n<=0.1
+    log(5/6^n)<=log(0.1)
+    n*log(5/6)<=log(0.1)
+    n>=log(0.1)/log(5/6) (le "<=" devient ">=" car "log(5/6)" donne un résultat négatif)
+    n>=12.6292531...
+    n>=13 -> Il faut lancer le dé au moins 13 fois !
+
+#2-17. Quels sont l’espérance mathématique et l’écart-type :
+a) du nombre de « face » pour le jet de 100 pièces de monnaie ?
+b) du nombre d'as obtenus lors du jet de 30 dés de poker ?
+c) du nombre de réponses correctes à 50 questions de « VRAI ou FAUX », les réponses étant données au hasard ?
+
+R : a) n = 100
+       p = 1/2
+       q = 1/2
+       X = Nombre de "face" ~ B(100, 1/2)
+       
+       espérance = E[X] = µ = n*p = 100*1/2 = 50
+       écart-type = sigma = sqrt(n*p*q) = sqrt(100*1/2*1/2) = 5
+    b) n = 30
+       p = 1/6
+       q = 5/6
+       X = Nombre d'as ~B(30, 1/6)
+       
+       espérance = E[X] = µ = n*p = 30*1/6 = 5
+       écart-type = sigma = sqrt(30*1/6*5/6) = sqrt(150/36) = 2.0412414...
+    c) n = 50
+       p = 1/2
+       q = 1/2
+       X = Nombre de réponses correctes ~B(50, 1/2)
+       
+       espérance = E[X] = µ = n*p = 50*1/2 = 25
+       écart-type = sigma = sqrt(n*p*q) = sqrt(50*1/2*1/2) = sqrt(25/2) = 3.5355339...
+       
+#2-18. Une compagnie pétrolière doit sous peine de banqueroute trouver au moins 3 puits de pétrole. Elle réussit à financer 12 forages et pour chacun d'eux, elle a 20% de chances d'aboutir. Quelle est la probabilité de ne pas être en faillite ?
+
+R : n = 12
+    p = 20%
+    q = 80%
+    X = Nombre de puits de pétrole
+    
+    P(Ne pas être en faillite) = P[X>=3] = 1-P[X<=2]
+                                         = 1-P[X=0]-P[X=1]-P[X=2]
+                                              0                       1                       2
+                                         = 1-C *(20%)^0*(80%)^(12-0)-C *(20%)^1*(80%)^(12-1)-C *(20%)^2*(80%)^(12-2)
+                                              12                      12                      12
+                                         = 1-(80%)^12-12*20%*(80%)^11-66*(20%)^2*(80%)^10
+                                         = 0.4416542...
+                                         
+#2-25. Dessinez sur un même graphique les gaussiennes des distributions  N(8,2) et N(12, 2). A quel point correspond leur intersection ?
+
+R : (Voir 2-25.png)
+
+#2-27. Pour la distribution normale réduite, calculez :
+a) P[Z < 1,34]
+b) P[0,57 < Z < 1,63]
+c) P[–0,68 < Z < 1,04]
+d) P[Z > –0,5]
+
+R : a) P[Z < 1.34]
+       = F(1.34)
+       = 0.9099
+    b) P[0.57 < Z < 1,63]
+       = F(1.63)-F(0.57)       car : P[Z>0.57]-P[Z>1.63]
+       = 0.9484-0.7157             = 1-P[Z<0.57]-(1-P[Z<1.63])
+       = 0.2327                    = -P[Z<0.57]+P[Z<1.63]
+    c) P[–0,68 < Z < 1,04]
+       = F(1.04)-F(-0.68)
+       = F(1.04)-(1-F(0.68))
+       = F(1.04)-1+F(0.68)
+       = 0.8508-1+0.7518
+       = 0.6026
+    d) P[Z > –0,5]
+       = 1-P[Z < -0.5]
+       = 1-(1-F(0.5))
+       = 1-1+F(0.5)
+       = F(0.5)
+       = 0.6915
+       
+#2-28. Pour une normale X ~ N(70, 25), calculez :
+a) P[56 < X < 83]
+b) P[X > 89]
+c) P[40 < X < 67]
+d) P[X = 82]
+
+R : a) P[56 < X < 83]
+       = P[(56-70)/25 < (X-70)/25 < (83-70)/25]
+       = P[-14/25 < (X-70)/25 < 13/25]
+       = F(13/25)-(1-F(14/25))
+       = F(0.52)-(1-F(0.56))
+       = 0.6985-1+0.7123
+       = 0.4108
+    b) P[X > 89]
+       = 1-P[(X-70)/25 < (89-70)/25]
+       = 1-P[(X-70)/25 < 19/25]
+       = 1-F(0.76)
+       = 1-0.7764
+       = 0.2236
+    c) P[40 < X < 67]
+       = P[(40-70)/25 < (X-70)/25 < (67-70)/25]
+       = P[-30/25 < (X-70)/25 < -3/25]
+       = P[-1.2 < Z < -0.12]
+       = F(-0.12) - F(-1.2)
+       = -1-F(0.12)-(1-F(1.2))
+       = 1-F(0.12)-1+F(1.2)
+       = F(1.2)-F(0.12)
+       = 0.8849-0.5478
+       = 0.3371
+    d) P[X = 82]
+       = 0
+       
+#2-29. Une certaine marque de pneus permet en moyenne de parcourir 60000 kilomètres avec un écart type de 10000 kilomètres. On suppose la distribution normale. Quelle est la probabilité qu'un pneu soit usé avant 50000 kilomètres ?
+
+R : X = distance parcourue avec un pneu ~N(60_000, 10_000)
+P(Pneu usé avant 50_000km) = P[X<50_000]
+                           = P[(x-60_000)/10_000 < (50_000-60_000)/10_000]
+                           = P[Z < -10_000/10_000]
+                           = P[Z < -1]
+                           = F(-1)
+                           = 1-F(1)
+                           = 1-0.8413
+                           = 0.1587
+                           
+#2-30. La vitesse des véhicules passant sur une nationale donnée est distribuée par une normale de moyenne 90 km/h et d’écart-type 16 km/h.
+a) Quelle est la proportion de véhicules roulant à plus de 110 km/h ?
+b) Quelle est la proportion de véhicules roulant entre 70 km/h et 102 km/h ?
+c) On veut diviser les véhicules en trois catégories d’effectif égal, les « lents », les « modérés » et les « rapides ». Quels sont les intervalles de vitesse qui les délimitent ?
+
+R : a) P[X > 110]
+       = P[(X-90)/16 > (110-90)/16]
+       = P[Z > 1.25]
+       = 1-F(1.25)
+       = 1-0.8944
+       = 0.1056
+       => Donc 10.56% des véhicules roulent à plus de 110km/h
+       
+    b) P[70 < X < 102]
+       = P[(70-90)/16 < (X-90)/16 < (102-90)/16]
+       = P[-1.25 < Z < 0.75]
+       = F(0.75)-F(-1.25)
+       = F(0.75)-(1-F(1.25))
+       = 0.7734-1+0.8944
+       = 0.6678
+       => Donc 66.78% des véhicules roulent entre 70 et 110km/h
+    c) (Voir 2-30.png)
+       Trois catégories d'effectif égale => 1/3 dans chaque groupe, càd 33.33333...%
+       On va chercher la valeur de Z2 qui est telle qu'il y a une probabilité 0.6666...(2/3) d'être à gauche de cette valeur
+       P[Z<Z2] = F(Z2) = 2/3 = 66.66% = 0.6666...
+       (On cherche la valeur la plus proche de 0.6666 dans la table de distribution normale réduite)
+       La valeur la plus proche est Z2 = 0.43 (donc Z1 = -0.43)
+       X = µ+Z*sigma
+       X1 = 90+16*(-0.43) = 83.12km/h
+       X2 = 90+16*0.43 = 96.88km/h
+       Lents : Ceux qui roulent à moins de 83.12km/h
+       Modérés : Ceux qui roulent entre 83.12km/h et 96.88km/h
+       Rapides : Ceux qui roulent plus vite que 96.88km/h
+       
+#2-31. Le temps nécessaire aux étudiants pour terminer une interrogation est une variable normale de moyenne 90 minutes et d'écart type 15 minutes.
+a) Quelle est la proportion d'étudiants qui terminent en moins de 2 heures ?
+b) Quelle devrait être la durée de l'épreuve si on souhaite que 90% des étudiants puissent la terminer ?
+
+R : a) P[X < 120]
+       = P[(X-90)/15 < (120-90)/15]
+       = P[Z < 2]
+       = F(2)
+       = 0.9772
+    b) Soit Z tel que F(Z)=0.9, le Z le plus proche est 1.28 (dans la table de distribution normale réduite)
+       On en déduit que X = 90+1.28*15 = 109.2 = 109min et 12sec = 1h49m12s
+       => 90% des élèves termineront en 1h49m12s
+       
+#2-33. On a mesuré la durée de vie d’une grande quantité d’ampoules électriques : 20% de celles-ci ont expiré après 1191 heures de fonctionnement, et après 1300 heures, il ne restait plus que 9% d’ampoules qui fonctionnaient encore. En admettant que la durée de vie des ampoules suive une distribution normale :
+a) Déterminez les paramètres de cette distribution
+b) Quelle est la durée de vie séparant les 40% d’ampoules les plus fragiles des 60% les plus résistantes ?
+
+R : Voir 02/03/21 à 9h19

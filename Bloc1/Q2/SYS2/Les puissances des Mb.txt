@@ -1,0 +1,9 @@
+ Kib   Mib   Gib   Tib   Pib   Eib   ZiB   YiB
+2^10  2^20  2^30  2^40  2^50  2^60  2^70  2^80
+
+Exemple : 32Gib / 4Kib
+      = 2^5*2^30 / 2^2*2^10
+      = 2^35 / 2^12
+      = 2^23
+      
+Kilo Mega Giga Tera Peta Exa Zeta Yota

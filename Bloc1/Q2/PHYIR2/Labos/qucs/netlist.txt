@@ -1,0 +1,10 @@
+# Qucs 0.0.20  /home/smile/.qucs/labo2Rch.sch
+
+R:R1 _net0 _net1 R="1 kOhm" Temp="26.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
+.DC:DC1 Temp="26.85" reltol="0.001" abstol="1 pA" vntol="1 uV" saveOPs="no" MaxIter="150" saveAll="no" convHelper="none" Solver="CroutLU"
+IProbe:AmpereMetre _net2 _net0
+R:R2 gnd _net1 R="2.2 kOhm" Temp="26.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
+VProbe:VoltMetreRch _net1 gnd
+.SW:SW1 Sim="DC1" Type="list" Param="Rch" Values="[1 kOhm; 10 kOhm; 100 kOhm]"
+R:Rch gnd _net1 R="Rch" Temp="26.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
+Vdc:V1 _net2 gnd U="7 V"

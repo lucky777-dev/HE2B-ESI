@@ -1,0 +1,148 @@
+#+latex_class: luckypdf
+#+language: fr
+#+title: STA2 - Lucky Solutions
+#+author: Sm!le42
+#+tags: @he2b @esi @sta2 @statistiques @mathématiques @solutions @lucky @smile
+
+* Chapitre 1 -- Introduction au calcul des probabilités
+
+** Exercice 3
+
+Un dé est truqué de sorte qu’en le lançant, la probabilité d’obtenir 6 vaut le triple de celle d’obtenir toute autre valeur. Avec ce dé, quelle est la probabilité d’obtenir un point pair ?
+
+*** Solution /(\(\sfrac{5}{8}\))/
+
+| P(1) = \(\sfrac{1}{8}\) | P(2) = \(\sfrac{1}{8}\) | P(3) = \(\sfrac{1}{8}\) | P(4) = \(\sfrac{1}{8}\) | P(5) = \(\sfrac{1}{8}\) | *P(6) =* \(\mathbf{\sfrac{3}{8}}\) |
+
+#+begin_center
+*P(Pair)* = P(2)+P(4)+P(6)
+
+= \(\sfrac{1}{8}\) + \(\sfrac{1}{8}\) + \(\sfrac{3}{8}\)
+
+\(\textcolor{luckydarkgreen}{=\mathbf{\sfrac{5}{8}}}\)
+#+end_center
+
+** Exercice 4
+Trois chevaux sont en course. Le premier à 2 fois plus de chances de gagner que le deuxième, celui-ci a aussi 2 fois plus de chances de gagner que le troisième. Quelles sont les probabilités de gagner de chacun des trois chevaux ?
+
+*** Solution /(\(\sfrac{4}{7}\);\(\sfrac{2}{7}\);\(\sfrac{1}{7}\))/
+
+#+attr_latex: :align |c|c|c|c|
+|--------+-----+-----+---|
+| Cheval |   1 |   2 | 3 |
+|--------+-----+-----+---|
+| Proba  | 4*x | 2*x | x |
+|--------+-----+-----+---|
+#+begin_center
+/x/ = \(\frac{1}{4+2+1}\) = \(\sfrac{1}{7}\)
+#+end_center
+#+attr_latex: :align |c|c|c|c|
+|--------+--------------------------------------------+--------------------------------------------+--------------------------------------------|
+| Cheval |                                          1 |                                          2 |                                          3 |
+|--------+--------------------------------------------+--------------------------------------------+--------------------------------------------|
+| Proba  | \(\textcolor{luckydarkgreen}{\bold{4/7}}\) | \(\textcolor{luckydarkgreen}{\bold{2/7}}\) | \(\textcolor{luckydarkgreen}{\bold{1/7}}\) |
+|--------+--------------------------------------------+--------------------------------------------+--------------------------------------------|
+
+** Exercice 5
+
+Soit un jeu de 52 cartes dont on tire une carte au hasard. On définit les évènements aléatoires suivants:
+- A : obtenir un as
+- B : obtenir une carte rouge
+- C : obtenir un cœur.
+
+Définissez les évènements suivants et calculez-en la probabilité :
+1. A \cap B
+2. B \cap C
+3. A \cup C
+4. B \cup C
+
+*** Solution /(\(\sfrac{1}{26}\);\(\sfrac{1}{4}\);\(\sfrac{4}{13}\);\(\sfrac{1}{2}\))/
+
+- P(A) = \(\sfrac{4}{52}\) = \(\sfrac{1}{13}\)
+- P(B) = \(\sfrac{26}{52}\) = \(\sfrac{1}{2}\)
+- P(C) = \(\sfrac{13}{52}\) = \(\sfrac{1}{4}\)
+
+**** *A \cap B* /\(\textcolor{gray}{\text{--> As et Rouge}}\)/
+
+= P(A *et* B) = \(\sfrac{1}{13}\)*\(\sfrac{1}{2}\)
+\(\textcolor{luckydarkgreen}{\mathbf{= \sfrac{1}{26}}}\)
+
+**** *B \cap C* /\(\textcolor{gray}{\text{--> Rouge et Coeur}}\)/
+
+= P(B *et* C) = P(C) \(\textcolor{luckydarkgreen}{\mathbf{= \sfrac{1}{4}}}\) /\(\textcolor{gray}{\text{--> Car un coeur est toujours rouge}}\)/
+
+**** *A \cup C* /\(\textcolor{gray}{\text{--> As ou Coeur}}\)/
+
+= P(A *ou* C) = P(A)+P(C)--P(A *et* C) /\(\textcolor{gray}{\text{--> On retire les As Rouges comptés en double}}\)/
+
+= \(\sfrac{4}{52}\) + \(\sfrac{13}{52}\) -- \(\sfrac{4}{52}\)*\(\sfrac{1}{4}\)
+
+\(\textcolor{luckydarkgreen}{\mathbf{= \sfrac{4}{13}}}\)
+
+**** *B \cup C* \(\textcolor{gray}{\text{--> Rouge ou Coeur}}\)
+
+= P(B *ou* C) = P(B) /\(\textcolor{gray}{\text{--> Car un coeur est toujours rouge}}\)/
+
+\(\textcolor{luckydarkgreen}{\mathbf{= \sfrac{1}{2}}}\)
+
+** Exercice 9
+
+Soit un groupe composé de 12 hommes dont la moitié a des lunettes et de 15 femmes dont le tiers a des lunettes. Si on choisit une personne au hasard dans ce groupe, quelle est la probabilité que cette personne soit un homme ou porte des lunettes ?
+
+*** Solution /(\(\sfrac{17}{27}\))/
+
+#+attr_latex: :align c|c|c|c|
+|        | Lunettes                                  | !Lunettes | Total                                     |
+|--------+-------------------------------------------+-----------+-------------------------------------------|
+| Hommes | \(\textcolor{teal}{\bold{6}}\) |         6 | \(\textcolor{teal}{\bold{12}}\) |
+|--------+-------------------------------------------+-----------+-------------------------------------------|
+| Femmes | 5                                         |        10 | 15                                        |
+|--------+-------------------------------------------+-----------+-------------------------------------------|
+| Total  | \(\textcolor{teal}{\bold{11}}\)               |        16 | \(\textcolor{teal}{\bold{27}}\) |
+
+--> P(Hommes *ou* Lunettes)
+
+= P(Homme) + P(Lunettes) -- P(Homme *et* Lunettes)
+
+= \(\sfrac{12}{27}\) + \(\sfrac{11}{27}\) -- \(\sfrac{6}{27}\)
+
+\(\textcolor{luckydarkgreen}{\mathbf{= \sfrac{17}{27}}}\)
+
+#+begin_quote
+*Même résultat avec la Loi /complémentaire/ de Morgan:*
+
+P(Homme ou Lunettes) = 1 -- P(Femmes et !Lunettes)
+
+= 1 -- \(\sfrac{10}{27}\) \(\textcolor{luckydarkgreen}{\mathbf{= \sfrac{17}{27}}}\)
+#+end_quote
+
+** Exercice 10
+
+Lors de vacances scolaires, deux activités sportives sont proposées : natation et vélo. On sait que 40% des participants se sont inscrits à la natation, 50% aux randonnées vélo et 25% se sont inscrits au deux. Quelle est la probabilité qu’un participant choisi au hasard ne fasse pas de sport ?
+
+*** Solution /(35%)/
+
+#+attr_latex: :align |c|c|c|c|
+|-----------+------+-------+-------|
+|           | Vélo | !Vélo | Total |
+|-----------+------+-------+-------|
+| Natation  |  25% |   15% |   40% |
+|-----------+------+-------+-------|
+| !Natation |  25% |   35% |   60% |
+|-----------+------+-------+-------|
+| Total     |  50% |   50% |  100% |
+|-----------+------+-------+-------|
+
+P(!Sport) = P(!Vélo *et* !Natation) \(\textcolor{luckydarkgreen}{\mathbf{= \sfrac{35}{100}}}\)
+
+#+begin_quote
+*Alternative:*
+
+P(!Sport) = 1 -- P(Natation *ou* Vélo)
+
+= 1 -- P(Natation) + P(Vélo) -- P(Natation *et* Vélo)
+
+= 100%--40%+50%--25% \(\textcolor{luckydarkgreen}{\mathbf{= \sfrac{35}{100}}}\)
+#+end_quote
+
+** À VENIR ...
