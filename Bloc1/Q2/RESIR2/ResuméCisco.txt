@@ -1,0 +1,241 @@
+*** INDEX ***
+1. Les réseaux aujourd'hui
+    1-2. Composants réseaux
+        1-2-1. Rôle d'hôte
+        1-2-2. Peer-To-Peer
+        1-2-3. Périphériques finaux
+        1-2-4. Équipements actifs
+        1-2-5. Supports réseau
+    1-3. Topologies et représentations du réseau
+        1-3-1. Représentation du réseau
+        1-3-2. Diagrammes de topologie
+    1-4. Types courants de réseaux
+        1-4-1. Réseaux de tailles diverses
+        1-4-2. LAN et WAN
+        1-4-3. Internet
+        1-4-4. Intranets et extranets
+    1-5. Connexions Internet
+        1-5-1. Technologie d'accès à Internet
+        1-5-2. Connexions Internet des bureaux à domicile et des petits bureaux
+        1-5-3. Connexions Internet d'entreprise
+        1-5-4. Réseau convergent
+    1-6. Réseaux fiables
+        1-6-1. Architecture réseau
+        1-6-2. Tolérance aux pannes
+        1-6-3. Évolutivité
+        1-6-4. Qualité de service (QoS)
+------------------------------------------------------------------------------------
+#1. Les réseaux aujourd'hui
+
+@Réseau: Ensemble inter-connecté, fait de composants autorisant la circulation  de flux ou d'éléments finis. (Ensemble de relations)
+
+#1-2. Composants réseaux
+
+#1-2-1. Rôle d'hôte
+
+@Hôtes ou périphériques finaux (parfois  clients): Ordinateurs connectés à un réseau et qui participent directement aux communications transmises sur le réseau.
+(Ex: Ordinateur, téléphone, tablette, imprimante...)
+
+@Adresse IP: Numéro qui identifie l'hôte et le réseau auquel l'hôte est connecté.
+
+@Serveurs: Ordinateurs équipés de logiciels leur permettant de fournir des informations, comme des messages électroniques ou des pages web, à d'autres périphériques finaux sur le réseau.
+Chaque service nécessite un logiciel serveur distinct.
+(Ex: Logiciel de serveur web pour offrir des services web.)
+
+CLIENT-------INTERNET-------SERVEUR
+
+Un seul ordinateur peut exécuter différents types de logiciel client.
+(Ex: Un utilisateur peut vérifier son courrier électronique et consulter une page web tout en utilisant une messagerie instantanée et en écoutant un flux audio.)
+
+#1-2-2. Peer-To-Peer
+
+@Réseau Peer-To-Peer: Lorsqu'un ordinateur fait à la fois office de serveur et de client sur le réseau.
+(Ex: Réseaux particuliers, petites entreprises.)
+Avantages: + Facile à configurer.
+           + Moins complexe.
+           + Coût réduit car appareils réseau et serveurs dédiés pas toujours nécessaires.
+           + Peut-être utilisé pour des tâches simples. (Ex: Transfert de fichiers, partage d'imprimantes.)
+Inconvénients: - Pas d'administration centralisée.
+               - Peu sécurisé.
+               - Non évolutif.
+               - Tous les périphériques peuvent servir à la fois de client et de serveur, ce qui peut ralentir les performances.
+               
+#1-2-3. Périphériques finaux
+
+Les périphériques réseau auxquels les personnes sont le plus habituées sont appelés terminaux.
+
+TERMINAL(IP.source)------>INTER-RÉSEAU------>TERMINAL(IP.destination)
+
+#1-2-4. Équipements actifs
+
+@Périphériques intermédiaires: Périphériques reliant différents dispositifs finaux au réseau, et fournissant la connectivité en s'assurant que les donnée sont transmises sur le réseau.
+(Ex: Routeur, routeur sans fil, pare-feu, commutateur LAN, commutateur multicouche.)
+Rôles: - Régénérer et retransmettre les signaux de communications.
+       - Gérer des informations indiquant les chemins qui existent à travers le réseau et l'inter-réseau.
+       - Indiquer aux autres périphériques les erreurs et les échecs de communication.
+       - Diriger des données vers d'autres chemins en cas d'échec de liaison.
+       - Classifier et diriger des messages en fonction des priorités.
+       - Autoriser ou refuser le flux des données, selon des paramètres de sécurité.
+       
+@Répéteurs: Régénèrent et retransmettent les signaux de communication.
+
+[Notes: Tous les dispositifs intermédiaires remplissent la fonction de répéteur. Les dispositifs intermédiaires peuvent connecter plusieurs réseaux individuels pour former un inter-réseau.]
+
+#1-2-5. Supports réseau
+
+@Support réseau: Canal via lequel le message se déplace de la source à la destination.
+Les plus connus: - Le cuivre.
+                 - La fibre optique.
+                 - Les ondes électromagnétiques.
+Critères à prendre en compte: - Distance maximale des supports
+                              - Environnement.
+                              - Quantité de donnée et vitesse de transmission.
+                              - Coût des supports et de l'installation.
+                              
+------------------------------------------------------------------------------------
+
+#1-3. Topologies et représentations du réseau
+
+#1-3-1. Représentation du réseau
+
+@Diagramme de topologie: Représentation visuelle des connexions d'un réseau, permettant de comprendre facilement comment les appareils sont connectés dans ce réseau.
+
+@Carte d'interface (NIC): Relie physiquement le dispositif terminal au réseau.
+
+@Port physique: Connecteur ou prise sur un dispositif de réseau où le support se connecte à un dispositif terminal ou à un autre dispositif de réseau.
+
+@Interface: Ports spécialisés sur un dispositif de réseau qui se connecte à des réseaux individuels. Comme les routeurs connectent les réseaux, les ports des routeurs sont appelés interfaces réseaux.
+
+[Note: Les termes "port" et "interface" sont souvent utilisés l'un pour l'autre.]
+
+#1-3-2. Diagrammes de topologie
+
+Physiques: Illustration de l'emplacement physique des dispositifs intermédiaires et de l'installation des câbles.
+
+Logiques: Illustration des périphériques, ports et schéma d'adressage du réseau.
+
+------------------------------------------------------------------------------------
+
+#1-4. Types courants de réseaux
+
+#1-4-1. Réseaux de tailles diverses
+
+@Petits réseaux domestiques: Relient quelques ordinateurs entre eux et à internet.
+
+@Réseaux de petits bureaux et de bureaux à domicile (SOHO): Permet aux ordinateurs d'un bureau à domicile ou d'un bureau distant de se connecter à un réseau d'entreprise ou d'accéder à des ressources centralisées et partagées.
+
+@Moyens et grands réseaux: Possibilité d'avoir de nombreux emplacements avec des centaines ou des milliers d'hôtes interconnectés.
+(Ex: Entreprises, écoles...)
+
+@Réseaux mondiaux: Connexion de centaines de millions d'ordinateurs dans le monde entier. (Internet)
+
+#1-4-2. LAN et WAN
+
+@LAN (Réseau local ou "Local Area Network"): Infrastructure de réseau qui fournit un accès aux utilisateurs et aux dispositifs finaux dans une petite zone géographique.
+(Ex: Maison, école, immeuble, campus...)
+
+Caractéristiques LAN: - Zone limitée
+                      - Administré par une seule entreprise ou une seule personne.
+                      - Bande passante à haut débit pour les périphériques terminaux internes et intermédiaires.
+
+@WAN (Réseau étendu ou "World Area Network"): Infrastructure de réseau qui donne accès à d'autres réseaux sur une vaste zone géographique, qui est généralement détenue et gérée par une grande entreprise ou un fournisseur de services de télécommunication.
+
+Caractéristiques WAN: - Vaste zone géographique. (Villes, états, provinces, pays, continents)
+                      - Administré par plusieurs prestataires de services.
+                      - Liaisons à plus bas débit entre les réseaux locaux.
+#1-4-3. Internet
+
+@Internet: Ensemble mondial de réseaux privés et publics interconnectés. ("Réseau de réseaux")
+
+#1-4-4. Intranets et extranets
+
+@Intranet: Connexion privée de LAN et de WAN qui appartiennent à une organisation. Il offre un accès aux membres de l'entreprise, à ses employés ou à d'autres personnes sous réserve d'une autorisation.
+
+@Extranet: Accès sûr et sécurisé pour les personnes par les personnes qui travaillent pour une organisation différente mais qui ont besoin d'accéder aux données de l'organisation.
+(Ex: Une entreprise qui donne accès aux fournisseurs et entrepreneurs de l'extérieur, un hôpital qui fournit un système de réservation aux médecins afin qu'ils puissent prendre des rendez-vous pour leurs patients, un bureau local de l'éducation qui fournit des informations sur le budget et le personnel aux écoles de son district...)
+
+INTERNET--------------(EXTRANET)--------------((INTRANET))
+Pas d'accès       (Accès restreint)         ((Accès complet))
+
+------------------------------------------------------------------------------------
+
+#1-5. Connexions Internet
+
+#1-5-1. Technologie d'accès à Internet
+
+@ISP (Internet Service Provider): Fournisseur d'accès à Internet.
+(Ex: Proximus, Voo, Orange...)
+
+#1-5-2. Connexions Internet des bureaux à domicile et des petits bureaux
+
+@Câble: Utilisation du même câble que celui qui achemine la télévision par câble.
+Avantages: + Large bande passante.
+           + Connexion permanente à l'Internet.
+
+@DSL (Digital Subscriber Line): Utilisation d'une ligne téléphonique. En général, un utilisateur de bureau à domicile ou de petit bureau se connecte à l'aide d'une ligne ADSL (Asymmetric Digital Subscriber Line) sur laquelle la vitesse descendante (download<-) est supérieure à la vitesse ascendante (upload->).
+Avantages: + Large bande passante.
+           + Connexion permanente à l'Internet.
+           + Grande disponibilité.
+
+@Cellulaire: Utilisation d'un réseau de téléphonie mobile.
+Avantage: + Accès à Internet partout où un signal cellulaire est capté.
+Inconvénient: - Performances limitées par les capacités du téléphone et de la tour de téléphonie cellulaire à laquelle il est connecté.
+
+@Satellite: Utilisation de satellites.
+Avantage: + Permet une connexion dans les régions qui, autrement, n'auraient aucune connectivité Internet.
+Inconvénient: Les antennes paraboliques nécessitent une ligne de vue claire vers le satellite.
+
+@Ligne commutée: Utilisation d'une ligne téléphonique et d'un modem.
+Avantages: + Peu coûteux.
+           + Utile lors de déplacements.
+Inconvénient: Faible bande passante, insuffisante pour les transferts de données importantes.
+
+#1-5-3. Connexions Internet d'entreprise
+
+@Ligne louée dédiée: Circuits réservés au sein du réseau du fournisseur de service, qui relient des bureaux géographiquement séparés par un réseau privé de voix et/ou de données. Généralement loués sur une base mensuelle ou annuelle.
+
+@Metro Ethernet (ou Ethernet WAN): Étend la technologie d'accès au LAN au WAN.
+
+@Business DSL: Souvent SDSL (Symmetric Digital Subscriber Line), similaire à la version grand public de l'ADSL mais qui permet une vitesse descendante et ascendante identiques et élevées.
+
+@Satellite: Lorsqu'une solution câblée n'est pas disponible.
+
+#1-5-4. Réseau convergent
+
+@Réseaux séparés traditionnels: Réseaux utilisant des technologies différentes pour le transport du signal de communication, et ne pouvant donc pas communiquer entre eux. Chaque réseau avait son propre ensemble de règles et de normes pour garantir le bon fonctionnement des communications.
+(Ex: Les ordinateurs, les téléphones ou les services de diffusion ne peuvent pas communiquer entre eux)
+
+@Réseaux convergents: Réseaux capables de transmettre des données, de la voix et et de la vidéo entre de nombreux types d'appareils différents sur la même infrastructure de réseau. Cette infrastructure réseau utilise le même ensemble de règles, de contrats et de normes mise en œuvre.
+(Ex: Les ordinateurs, les téléphones ou les services de diffusion peuvent communiquer entre eux grâce à une règle de contrat standard commune)
+
+------------------------------------------------------------------------------------
+
+#1-6. Réseaux fiables
+
+#1-6-1. Architecture réseau
+
+@Architecture réseau: Technologies qui soutiennent l'infrastructure et les services programmés et les règles, ou protocoles, qui font circuler les données sur le réseau.
+
+#1-6-2. Tolérance aux pannes
+
+@Tolérance aux pannes: Limitation du nombre de dispositifs affectés lors d'une panne. Conception de façon à permettre une récupération rapide en cas de panne. Utilisation de la redondance. (La mise en place d'un réseau à commutation par paquets est un des moyens par lesquels des réseaux fiables assurent la redondance)
+
+@Redondance: Utilisation de plusieurs chemins entre la source et la destination d'un message. Ainsi, si un chemin échoue, les messages sont instantanément envoyés sur un autre lien.
+
+@Commutation par paquets: Fractionnement du trafic en paquets qui sont acheminés sur un réseau partagé. Ainsi, un message unique (tel qu'un e-mail ou un flux vidéo) est fractionné en de nombreux blocs de message appelés paquets, qui contiennent chacun les informations d'adressage nécessaires de la source et de la destination du message. Les routeurs du réseau commutent les paquets en fonction de l'état du réseau à ce moment-là, cela signifie que tous les paquets d'un même message peuvent emprunter des chemins très différents pour atteindre la même destination car le routeur modifie dynamiquement l'itinéraire lorsqu'une liaison est défaillante.
+
+#1-6-3. Évolutivité
+
+@Réseau évolutif: Celui-ci se développe rapidement pour prendre en charge les nouveaux utilisateurs et applications, et ceci sans dégrader les performances des services auxquels les utilisateurs existants accèdent. En outre, les réseaux sont évolutifs étant donné que les concepteurs font appel à des normes et à des protocoles reconnus. Ainsi, les fournisseurs de logiciel et de matériel peuvent se concentrer sur l'amélioration des produits et des services, sans se soucier d'avoir à développer un nouvel ensemble de règles pour assurer leur fonctionnement dans le réseau.
+(Ex: Il est possible de connecter des utilisateurs supplémentaires, et même des réseaux tout entiers, à Internet sans que les performances soient dégradés au niveau de l'utilisateur)
+
+#1-6-4. Qualité de service (QoS)
+
+@Qualité de service (QoS): Mécanisme essentiel pour gérer l'encombrement et assurer une fourniture fiable des contenus à l'ensemble des utilisateurs. Lorsque le volume du trafic est supérieur à ce qui peut être transporté sur le réseau, les appareils gardent les paquets en mémoire jusqu'à ce que des ressources soient disponibles pour les transmettre.
+(Ex: Si un utilisateur demande une page web, et un autre est au téléphone, lorsqu'une politique de QoS est mise en œuvre, le routeur peut gérer le flux de données et le trafic voix en donnant la priorité aux communications voix en cas de congestion du réseau)
+
+[Notes: Les pages web se voient généralement affecter une priorité moins élevée. Un appel de voix sur IP (VoIP) devra être prioritaire pour maintenir une expérience utilisateur fluide et ininterrompue]
+
+@Encombrement: Lorsque la demande de bande passante excède la quantité disponible.
+
+@Bande passante: Nombre de bits pouvant être transmis par seconde. (bit/s)
